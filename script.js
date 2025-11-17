@@ -324,6 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateBestScores();
+
+        // Handle blockchain rewards if in paid mode
+        if (window.memoryGameBlockchain) {
+            window.memoryGameBlockchain.handleGameWin(score, moves, elapsed);
+        }
+
         winModal.classList.add('active');
     }
 
@@ -346,6 +352,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         pauseButton.querySelector('.btn-icon').textContent = '⏸️';
         pauseButton.innerHTML = '<span class="btn-icon">⏸️</span> Pause';
+
+        // Reset blockchain game state
+        if (window.memoryGameBlockchain) {
+            window.memoryGameBlockchain.resetGamePaid();
+            // Hide blockchain reward in modal
+            document.getElementById('blockchain-reward').style.display = 'none';
+        }
+    }
+
+    // Start paid game (called from blockchain integration)
+    window.startGameWithEntry = function() {
+        resetGame();
+        // Game starts after payment is confirmed
     }
 
     // Pause/Resume

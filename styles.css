@@ -614,3 +614,560 @@ body {
         font-size: 1.8rem;
     }
 }
+
+/* ============================================ */
+/* BLOCKCHAIN FEATURES STYLES */
+/* ============================================ */
+
+/* Wallet Panel */
+.wallet-panel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.wallet-panel:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wallet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.wallet-icon {
+    font-size: 1.2rem;
+}
+
+.wallet-connected {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wallet-address {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.wallet-balance,
+.wallet-earnings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.balance-label,
+.earnings-label {
+    font-weight: 500;
+}
+
+.balance-value,
+.earnings-value {
+    font-weight: bold;
+    color: #4facfe;
+    margin: 0 5px;
+}
+
+.balance-currency,
+.earnings-currency {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.disconnect-btn {
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    font-size: 0.85rem;
+    padding: 8px 16px;
+}
+
+/* Blockchain Panel */
+.blockchain-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Game Mode Selector */
+.game-mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.mode-btn.active {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+}
+
+.mode-icon {
+    font-size: 1.3rem;
+}
+
+/* Entry Fee Panel */
+.entry-fee-panel {
+    margin-top: 20px;
+}
+
+.panel-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.entry-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.entry-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.entry-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.entry-btn.active {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.5);
+}
+
+.prize-info {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.prize-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.prize-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.start-paid-btn {
+    width: 100%;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 5px 25px rgba(79, 172, 254, 0.4);
+}
+
+.start-paid-btn:hover {
+    box-shadow: 0 8px 35px rgba(79, 172, 254, 0.6);
+}
+
+/* Leaderboard Panel */
+.leaderboard-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.leaderboard-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.leaderboard-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.filter-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.leaderboard-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 100px 120px;
+    gap: 10px;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.leaderboard-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.leaderboard-item.user-entry {
+    background: linear-gradient(90deg, rgba(79, 172, 254, 0.2), rgba(0, 242, 254, 0.2));
+    border: 1px solid rgba(79, 172, 254, 0.5);
+}
+
+.rank {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+}
+
+.player-address {
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.player-score {
+    font-weight: bold;
+    text-align: right;
+}
+
+.player-earnings {
+    color: #4facfe;
+    font-weight: bold;
+    text-align: right;
+}
+
+.no-entries {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.claim-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+    box-shadow: 0 5px 25px rgba(255, 215, 0, 0.4);
+}
+
+.claim-btn:hover {
+    box-shadow: 0 8px 35px rgba(255, 215, 0, 0.6);
+}
+
+/* Blockchain Reward in Win Modal */
+.blockchain-reward {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.reward-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.reward-amount {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.reward-status {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.tx-hash {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.tx-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-right: 10px;
+}
+
+.tx-link {
+    color: #4facfe;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.tx-link:hover {
+    text-decoration: underline;
+}
+
+/* Transaction Modal */
+.tx-modal-content {
+    min-width: 300px;
+}
+
+.tx-spinner {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tx-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.tx-details {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Notification System */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.notification-error {
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+}
+
+.notification-warning {
+    background: linear-gradient(45deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+}
+
+.notification-info {
+    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+}
+
+/* MetaMask Warning */
+.metamask-warning {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.warning-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.warning-icon {
+    font-size: 1.5rem;
+}
+
+.warning-text {
+    color: white;
+    font-weight: 600;
+}
+
+.warning-btn {
+    padding: 8px 16px;
+    background: white;
+    color: #f5576c;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.warning-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Blockchain Features */
+@media (max-width: 768px) {
+    .wallet-panel {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        padding: 12px 15px;
+    }
+
+    .wallet-connected {
+        gap: 8px;
+    }
+
+    .mode-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .leaderboard-item {
+        grid-template-columns: 40px 1fr 80px 100px;
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .rank {
+        font-size: 1rem;
+    }
+
+    .player-address {
+        font-size: 0.75rem;
+    }
+
+    .notification {
+        right: 10px;
+        left: 10px;
+        font-size: 0.9rem;
+    }
+}

@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game - Ultimate Edition</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Web3 Library -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 </head>
 <body>
     <div class="particles" id="particles"></div>
+
+    <!-- Wallet Connection Panel -->
+    <div class="wallet-panel">
+        <div class="wallet-info" id="wallet-info">
+            <button class="wallet-btn" id="connect-wallet-btn">
+                <span class="wallet-icon">🔗</span> Connect Wallet
+            </button>
+        </div>
+        <div class="wallet-connected" id="wallet-connected" style="display: none;">
+            <div class="wallet-address" id="wallet-address">0x0000...0000</div>
+            <div class="wallet-balance">
+                <span class="balance-label">Balance:</span>
+                <span class="balance-value" id="wallet-balance">0.00</span>
+                <span class="balance-currency">ETH</span>
+            </div>
+            <div class="wallet-earnings">
+                <span class="earnings-label">Earnings:</span>
+                <span class="earnings-value" id="wallet-earnings">0.00</span>
+                <span class="earnings-currency">ETH</span>
+            </div>
+            <button class="wallet-btn disconnect-btn" id="disconnect-wallet-btn">
+                <span class="wallet-icon">🔌</span> Disconnect
+            </button>
+        </div>
+    </div>
 
     <div class="game-container">
         <h1 class="game-title">
@@ -48,6 +75,41 @@
             </div>
         </div>
 
+        <!-- Blockchain Game Mode -->
+        <div class="blockchain-panel">
+            <div class="game-mode-selector">
+                <button class="mode-btn active" id="free-mode-btn">
+                    <span class="mode-icon">🎮</span> Free Mode
+                </button>
+                <button class="mode-btn" id="paid-mode-btn">
+                    <span class="mode-icon">💎</span> Play to Earn
+                </button>
+            </div>
+
+            <div class="entry-fee-panel" id="entry-fee-panel" style="display: none;">
+                <div class="panel-title">💰 Entry Fee</div>
+                <div class="entry-options">
+                    <button class="entry-btn active" data-fee="0.001">0.001 ETH</button>
+                    <button class="entry-btn" data-fee="0.005">0.005 ETH</button>
+                    <button class="entry-btn" data-fee="0.01">0.01 ETH</button>
+                    <button class="entry-btn" data-fee="0.05">0.05 ETH</button>
+                </div>
+                <div class="prize-info">
+                    <div class="prize-item">
+                        <span class="prize-label">Prize Pool:</span>
+                        <span class="prize-value" id="prize-pool">0.000</span> ETH
+                    </div>
+                    <div class="prize-item">
+                        <span class="prize-label">Your Stake:</span>
+                        <span class="prize-value" id="your-stake">0.000</span> ETH
+                    </div>
+                </div>
+                <button class="game-btn start-paid-btn" id="start-paid-game">
+                    <span class="btn-icon">🚀</span> Start Game (Pay Entry)
+                </button>
+            </div>
+        </div>
+
         <div class="difficulty-selector">
             <button class="difficulty-btn active" data-difficulty="easy">Easy (4x4)</button>
             <button class="difficulty-btn" data-difficulty="medium">Medium (4x5)</button>
@@ -82,6 +144,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- Blockchain Leaderboard -->
+        <div class="leaderboard-panel" id="leaderboard-panel" style="display: none;">
+            <div class="leaderboard-title">👑 On-Chain Leaderboard</div>
+            <div class="leaderboard-filters">
+                <button class="filter-btn active" data-filter="all">All Time</button>
+                <button class="filter-btn" data-filter="today">Today</button>
+                <button class="filter-btn" data-filter="week">This Week</button>
+            </div>
+            <div class="leaderboard-list" id="leaderboard-list">
+                <div class="leaderboard-item">
+                    <span class="rank">1</span>
+                    <span class="player-address">0x0000...0000</span>
+                    <span class="player-score">0</span>
+                    <span class="player-earnings">0.000 ETH</span>
+                </div>
+                <!-- More items will be added dynamically -->
+            </div>
+            <button class="game-btn claim-btn" id="claim-earnings-btn" style="display: none;">
+                <span class="btn-icon">💰</span> Claim Earnings
+            </button>
+        </div>
     </div>
 
     <div class="modal" id="win-modal">
@@ -105,10 +189,30 @@
             <div class="new-record" id="new-record" style="display: none;">
                 🏆 NEW RECORD! 🏆
             </div>
+            <div class="blockchain-reward" id="blockchain-reward" style="display: none;">
+                <div class="reward-title">💎 Blockchain Rewards</div>
+                <div class="reward-amount" id="reward-amount">+0.000 ETH</div>
+                <div class="reward-status" id="reward-status">Processing transaction...</div>
+                <div class="tx-hash" id="tx-hash" style="display: none;">
+                    <span class="tx-label">Transaction:</span>
+                    <a class="tx-link" id="tx-link" target="_blank" rel="noopener">View on Explorer</a>
+                </div>
+            </div>
             <button class="modal-btn" id="play-again-btn">Play Again</button>
         </div>
     </div>
 
+    <!-- Transaction Loading Modal -->
+    <div class="modal" id="tx-modal">
+        <div class="modal-content tx-modal-content">
+            <div class="tx-spinner">⏳</div>
+            <h2 class="modal-title">Processing Transaction</h2>
+            <p class="tx-message" id="tx-message">Please confirm the transaction in your wallet...</p>
+            <div class="tx-details" id="tx-details"></div>
+        </div>
+    </div>
+
+    <script src="web3-integration.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

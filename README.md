@@ -1,6 +1,6 @@
-# Memory Master 🃏✨
+# Memory Master 🃏✨💎
 
-An addictive, visually stunning memory card game with amazing animations, particle effects, and engaging gameplay mechanics. Built with pure HTML, CSS, and JavaScript - no frameworks required!
+An addictive, visually stunning memory card game with amazing animations, particle effects, and **blockchain-powered Play-to-Earn** mechanics. Built with pure HTML, CSS, JavaScript, and Web3 integration!
 
 ## How to Play
 
@@ -14,7 +14,22 @@ An addictive, visually stunning memory card game with amazing animations, partic
 
 ## Features
 
-### Gameplay
+### 🎮 Gameplay Modes
+
+#### Free Mode
+- Play unlimited games without any cost
+- Track your best scores locally
+- Perfect for practice and skill building
+
+#### 💎 Play-to-Earn Mode (Blockchain)
+- Connect your Web3 wallet (MetaMask)
+- Pay entry fees in ETH (0.001 - 0.05 ETH)
+- Win cryptocurrency rewards based on your score
+- Compete on the on-chain leaderboard
+- Claim your earnings anytime
+- Transparent, blockchain-verified rewards
+
+### Gameplay Features
 - **3 Difficulty Levels**: Easy (16 cards), Medium (20 cards), Hard (36 cards)
 - **Scoring System**: Earn points with combo bonuses and efficiency multipliers
 - **Combo System**: Build streaks for massive score multipliers
@@ -46,6 +61,18 @@ An addictive, visually stunning memory card game with amazing animations, partic
 - **Combo Progress Bar**: Visual indicator of combo streak
 - **Stats Dashboard**: Real-time display of score, moves, time, and combo
 
+### 🔗 Blockchain Features
+- **Web3 Wallet Integration**: Connect via MetaMask or compatible wallets
+- **Cryptocurrency Payments**: Pay entry fees in ETH
+- **Smart Rewards System**: Win up to 2x-4x your entry fee based on performance
+- **On-Chain Leaderboard**: Compete with players worldwide
+- **Earnings Tracking**: View accumulated rewards in your wallet panel
+- **One-Click Claim**: Withdraw earnings to your wallet anytime
+- **Transaction History**: View all transactions on block explorer
+- **Real-Time Balance**: Live ETH balance display
+- **Secure**: All transactions verified on the blockchain
+- **Transparent**: Open-source smart contract integration
+
 ## Technologies Used
 
 - **HTML5**: Semantic markup with modern structure
@@ -61,6 +88,12 @@ An addictive, visually stunning memory card game with amazing animations, partic
   - Event Delegation
   - DOM Manipulation
   - CSS-in-JS for dynamic styling
+- **Blockchain & Web3**:
+  - Ethers.js v5 for Web3 integration
+  - MetaMask wallet connectivity
+  - Ethereum blockchain (testnet compatible)
+  - Smart contract interaction (extensible architecture)
+  - Cryptocurrency transaction handling
 
 ## Play Online
 
@@ -92,13 +125,55 @@ Simply open `index.html` in any modern web browser!
 
 4. Start playing and try to beat your high scores!
 
+## Blockchain Setup (Optional)
+
+To use the Play-to-Earn features:
+
+1. **Install MetaMask**:
+   - Download from [metamask.io](https://metamask.io/)
+   - Create a wallet or import existing one
+   - **IMPORTANT**: Use testnet for testing (Sepolia, Goerli, etc.)
+
+2. **Get Test ETH**:
+   - Switch to a testnet in MetaMask
+   - Get free test ETH from faucets:
+     - [Sepolia Faucet](https://sepoliafaucet.com/)
+     - [Goerli Faucet](https://goerlifaucet.com/)
+
+3. **Connect Wallet**:
+   - Click "Connect Wallet" button in the game
+   - Approve connection in MetaMask
+   - Your balance and address will appear
+
+4. **Play to Earn**:
+   - Switch to "Play to Earn" mode
+   - Select entry fee amount
+   - Click "Start Game (Pay Entry)"
+   - Confirm transaction in MetaMask
+   - Play and win rewards!
+
+5. **Claim Rewards**:
+   - Accumulated earnings shown in wallet panel
+   - Click "Claim Earnings" to withdraw
+   - Confirm transaction in MetaMask
+
+### Production Deployment
+
+For production use with real ETH:
+- Deploy smart contract to mainnet
+- Update `contractAddress` in `web3-integration.js`
+- Add contract ABI
+- Test thoroughly on testnet first
+- **Never use mainnet funds without proper security audits**
+
 ## Browser Compatibility
 
 Works on all modern browsers:
-- Chrome/Edge (Chromium-based)
+- Chrome/Edge (Chromium-based) - **Recommended for Web3**
 - Firefox
 - Safari
 - Opera
+- Brave - **Built-in Web3 support**
 
 ## Game Mechanics
 
@@ -114,6 +189,13 @@ Works on all modern browsers:
 - Every 3rd combo triggers special sound and visual effects
 - Combo bar fills up as you progress (max at 5x combo)
 
+### 💎 Blockchain Rewards Formula
+- **Base Reward**: 2x entry fee
+- **Score Multiplier**: Up to 2x based on final score (score/1000)
+- **Total Reward**: Base Reward × Score Multiplier
+- **Example**: 0.01 ETH entry with 1500 score = 0.01 × 2 × 1.5 = 0.03 ETH reward
+- **Leaderboard Ranking**: Top scores earn recognition on global leaderboard
+
 ## Performance
 
 - Zero dependencies - lightweight and fast
@@ -122,10 +204,38 @@ Works on all modern browsers:
 - Efficient DOM manipulation
 - LocalStorage for instant score retrieval
 
+## Security & Disclaimer
+
+⚠️ **IMPORTANT SECURITY NOTICE**:
+- This is a demonstration/educational project
+- Current implementation uses simulated blockchain transactions for demo purposes
+- For production use, deploy and audit a proper smart contract
+- Never use real funds without thorough security audits
+- Test extensively on testnets before mainnet deployment
+- Be aware of gas fees and network congestion
+- Smart contract code should be audited by professionals
+
 ## Credits
 
-Created with passion for fun, addictive gameplay and beautiful visual design!
+Created with passion for:
+- Fun, addictive gameplay
+- Beautiful visual design
+- Blockchain innovation
+- Play-to-Earn gaming revolution
+
+## Contributing
+
+Contributions are welcome! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
+- Improve smart contract security
+- Add more blockchain networks
+
+## License
+
+MIT License - Feel free to use and modify for your own projects!
 
 ---
 
-**Enjoy the game and challenge your friends to beat your high scores!** 🏆
+**Enjoy the game, earn crypto rewards, and challenge your friends to beat your high scores!** 🏆💎

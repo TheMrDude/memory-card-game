@@ -3,16 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Card Game</title>
+    <title>Memory Card Game - Ultimate Edition</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="particles" id="particles"></div>
+
     <div class="game-container">
-        <h1>Memory Card Game</h1>
-        <div id="score">Moves: <span id="moves">0</span></div>
+        <h1 class="game-title">
+            <span class="title-letter">M</span>
+            <span class="title-letter">E</span>
+            <span class="title-letter">M</span>
+            <span class="title-letter">O</span>
+            <span class="title-letter">R</span>
+            <span class="title-letter">Y</span>
+            <span class="title-spacer"></span>
+            <span class="title-letter">M</span>
+            <span class="title-letter">A</span>
+            <span class="title-letter">S</span>
+            <span class="title-letter">T</span>
+            <span class="title-letter">E</span>
+            <span class="title-letter">R</span>
+        </h1>
+
+        <div class="stats-panel">
+            <div class="stat-item">
+                <div class="stat-label">Score</div>
+                <div class="stat-value" id="score">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Moves</div>
+                <div class="stat-value" id="moves">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Time</div>
+                <div class="stat-value" id="timer">0:00</div>
+            </div>
+            <div class="stat-item combo-container">
+                <div class="stat-label">Combo</div>
+                <div class="stat-value combo-value" id="combo">0x</div>
+                <div class="combo-bar">
+                    <div class="combo-fill" id="combo-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="easy">Easy (4x4)</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium (4x5)</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard (6x6)</button>
+        </div>
+
         <div id="game-board" class="game-board"></div>
-        <button id="reset-btn">Reset Game</button>
+
+        <div class="controls">
+            <button id="reset-btn" class="game-btn">
+                <span class="btn-icon">🔄</span> New Game
+            </button>
+            <button id="pause-btn" class="game-btn">
+                <span class="btn-icon">⏸️</span> Pause
+            </button>
+        </div>
+
+        <div class="best-score-panel">
+            <div class="best-score-title">🏆 Best Scores</div>
+            <div class="best-scores">
+                <div class="best-score-item">
+                    <span class="difficulty-name">Easy:</span>
+                    <span class="best-score-value" id="best-easy">-</span>
+                </div>
+                <div class="best-score-item">
+                    <span class="difficulty-name">Medium:</span>
+                    <span class="best-score-value" id="best-medium">-</span>
+                </div>
+                <div class="best-score-item">
+                    <span class="difficulty-name">Hard:</span>
+                    <span class="best-score-value" id="best-hard">-</span>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="modal" id="win-modal">
+        <div class="modal-content">
+            <div class="modal-fireworks">🎉</div>
+            <h2 class="modal-title">Congratulations!</h2>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Final Score</div>
+                    <div class="modal-stat-value" id="final-score">0</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Moves</div>
+                    <div class="modal-stat-value" id="final-moves">0</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Time</div>
+                    <div class="modal-stat-value" id="final-time">0:00</div>
+                </div>
+            </div>
+            <div class="new-record" id="new-record" style="display: none;">
+                🏆 NEW RECORD! 🏆
+            </div>
+            <button class="modal-btn" id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
